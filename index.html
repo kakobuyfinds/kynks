@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#182b45">
+<title>Sugargoo spreadsheet – sko, tøj og en bedre købsliste</title>
+<meta name="description" content="Brug en Sugargoo spreadsheet med omtanke. Find kategorier til sko og tøj, lær at kontrollere størrelser og QC-billeder, og planlæg dit samlede budget.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Sugargoo spreadsheet – fra inspiration til en bedre købsliste">
+<meta property="og:description" content="En dansk guide til produktlinks, pasform, billedkontrol og udgifter. Udforsk ti kategorier hos HipobuyFind.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=75">
+<meta property="og:image:alt" content="Rød Nike-sneaker på en rød baggrund">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sugargoo spreadsheet – en dansk købsguide">
+<meta name="twitter:description" content="Kategorier, størrelser, QC-billeder og et gennemskueligt budget før dit næste køb.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=75">
+<!-- Filnavn: index.html. Tilføj først canonical og og:url, når sidens eget udgivelsesdomæne er kendt. -->
+<!--
+Researchgrundlag: 10 relevante webresultater for “Sugargoo spreadsheet”.
+Googles resultatside kunne ikke åbnes; placeringer på Googles første side er ikke verificeret.
+Temaer fra søgeresultaternes titler og uddrag, ikke kopieret brødtekst:
+1. sugargoo--spreadsheet.com: produktfund, sko, tøj, kategorier.
+2. sugargo.net: kategoriserede produktlister og sammenligning.
+3. sugargooo.com: produktlinks, QC-billeder og købsguider.
+4. spreadsheet-sugargoo.com: sko, hættetrøjer og tilbehør.
+5. sugargoo.org: produktoversigt og beklædningskategorier.
+6. sugargootab.com: størrelser, QC og forsendelsesbudget.
+7. sugargoo-spreadsheets.org: kategorilister og forsendelsestemaer.
+8. sheetsugargoo.com: streetwear og produktnavigation.
+9. sugargoo.io: produktlinks og billedkontrol.
+10. repsheet.net/spreadsheet/sugargoo: filtre, produktvalg og QC.
+Ingen af resultaternes tal, rabatter, anmeldelser eller kvalitetsløfter er overtaget.
+-->
+<style>
+:root{--paper:#f5f2e9;--ink:#182b45;--muted:#4f5b68;--line:#d8d9d2;--accent:#e8ef76;--white:#fffefa;--radius:18px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible,summary:focus-visible{outline:3px solid #5364cb;outline-offset:5px}
+.wrap{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+.top{background:var(--ink);color:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:19px}
+.logo{font-weight:850;letter-spacing:-.6px;font-size:1.25rem;text-decoration:none}
+.logo span{color:var(--accent)}
+.edition{font-size:.8rem;letter-spacing:.11em;text-transform:uppercase}
+.category-section{padding-block:25px 30px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.13em;margin:0 0 12px}
+.categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.categories a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;border:1px solid var(--line);border-radius:9px;text-decoration:none;background:var(--white);font-size:.88rem;font-weight:650}
+.categories a::after{content:"↗";font-size:1rem}
+.categories a:hover{background:var(--accent);border-color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.08fr 1fr;gap:46px;align-items:center;padding-block:54px}
+h1,h2,h3{line-height:1.14;letter-spacing:-.04em;text-wrap:balance}
+h1{font-size:clamp(2.5rem,5.2vw,4.8rem);margin:14px 0 24px;max-width:13ch}
+h2{font-size:clamp(1.85rem,3.4vw,2.9rem);margin:0 0 20px}
+h3{font-size:1.3rem;margin:0 0 14px;letter-spacing:-.02em}
+p{margin:0 0 17px}
+.lead{font-size:1.08rem;color:var(--muted);max-width:54ch}
+.button{display:inline-flex;align-items:center;gap:18px;background:var(--ink);color:var(--white);padding:14px 20px;border-radius:50px;text-decoration:none;font-weight:750}
+.button:hover{background:#294866}
+.hero figure{margin:0;position:relative}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius)}
+figcaption{font-size:.79rem;color:var(--muted);margin-top:10px}
+.stamp{position:absolute;left:18px;top:18px;background:var(--accent);padding:8px 14px;border-radius:50px;font-size:.76rem;font-weight:800}
+.answer{border-block:1px solid var(--line);padding-block:30px;display:grid;grid-template-columns:1fr 2fr;gap:40px}
+.answer h2{font-size:1.4rem;margin:0}
+.answer p{margin:0;max-width:75ch}
+.section{padding-block:54px}
+.intro{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:27px}
+.intro h2{margin-bottom:0;max-width:18ch}
+.intro p{max-width:43ch;color:var(--muted);margin:0}
+.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.topic{padding:24px 20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+.topic .num{display:inline-block;font-size:.75rem;letter-spacing:.12em;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:25px}
+.topic p{font-size:.92rem;color:var(--muted);margin:0}
+.editorial{display:grid;grid-template-columns:.85fr 1.15fr;gap:38px;align-items:start}
+.editorial figure{margin:0}
+.editorial img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+.article-stack{display:grid;gap:28px}
+.article-stack article{border-bottom:1px solid var(--line);padding-bottom:25px}
+.article-stack article:last-child{padding-bottom:0;border-bottom:0}
+.article-stack h3{font-size:1.55rem}
+.article-stack p{color:var(--muted)}
+.article-stack p:last-child{margin:0}
+.tag{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:10px}
+.checks{padding:30px;background:var(--ink);color:var(--white);border-radius:var(--radius)}
+.checks h2{max-width:20ch}
+.checks ul{display:grid;grid-template-columns:1fr 1fr;gap:14px 35px;padding-left:20px;margin-bottom:0}
+.checks li::marker{color:var(--accent)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:540px;background:var(--white)}
+th,td{text-align:left;padding:17px 19px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#e8eadd;font-size:.86rem}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:750;width:27%}
+.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:45px;border-top:1px solid var(--line)}
+.faq-intro p{color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:19px 0}
+details:first-child{padding-top:0}
+summary{cursor:pointer;font-weight:750;line-height:1.5;padding-right:15px}
+details p{color:var(--muted);margin:13px 0 0}
+.end{display:flex;justify-content:space-between;align-items:center;gap:25px;background:var(--accent);padding:30px;border-radius:var(--radius);margin-bottom:40px}
+.end h2{font-size:1.7rem;margin:0 0 8px}
+.end p{margin:0;max-width:60ch}
+footer{border-top:1px solid var(--line);padding-block:28px 34px;color:var(--muted);font-size:.82rem}
+footer p{max-width:100ch;margin-bottom:10px}
+@media(max-width:900px){
+.categories{grid-template-columns:repeat(3,1fr)}
+.topic-grid{grid-template-columns:repeat(2,1fr)}
+.hero{gap:25px}
+.editorial{gap:25px}
+.faq{gap:25px}
+}
+@media(max-width:620px){
+.wrap{width:calc(100% - 28px)}
+.edition{font-size:.65rem;letter-spacing:.04em}
+.categories{grid-template-columns:repeat(2,1fr)}
+.categories a{font-size:.8rem;padding:11px}
+.hero,.answer,.editorial,.faq{grid-template-columns:1fr}
+.hero{padding-block:32px;gap:28px}
+h1{max-width:15ch}
+.hero figure{max-width:480px}
+.answer{gap:13px}
+.section{padding-block:36px}
+.intro{display:block}
+.intro p{margin-top:15px}
+.topic{padding:20px 16px}
+.topic h3{font-size:1.1rem}
+.checks{padding:24px}
+.checks ul{grid-template-columns:1fr}
+.editorial figure{max-width:430px}
+.end{align-items:start;flex-direction:column;padding:24px}
+.faq{gap:20px}
+}
+@media(prefers-reduced-motion:no-preference){
+a{transition:background-color .15s ease,border-color .15s ease}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Sugargoo spreadsheet – sko, tøj og en bedre købsliste",
+      "description": "En dansk guide til produktlinks, størrelser, QC-billeder og planlægning af et samlet købsbudget.",
+      "inLanguage": "da",
+      "about": {
+        "@type": "Thing",
+        "name": "Sugargoo spreadsheet"
+      },
+      "mainEntity": {
+        "@type": "Article",
+        "headline": "Fra produktlink til et velovervejet køb",
+        "inLanguage": "da",
+        "description": "Tre korte guider om skostørrelse, tøjpasform og kontrol af tilbehør før køb."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "da",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvad er en Sugargoo spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Det er en organiseret samling produktlinks, der bruges som udgangspunkt for at finde og sammenligne varer. En liste erstatter ikke sælgerens oplysninger, en størrelsestabel eller din egen kontrol før køb."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor fører sidens links hen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kategoriknapperne åbner de angivne kategorier på hipobuyfind.com. Alle øvrige klikbare links åbner https://www.hipobuyfind.com. De fører ikke direkte til Sugargoo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvordan vælger jeg den rigtige skostørrelse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mål begge fødder, og sammenlign målene med størrelsestabellen for den konkrete model. Bed om en indvendig måling, hvis tabellen er uklar. Et EU-nummer alene er ikke nok til at sikre pasformen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvad skal jeg se efter på QC-billeder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kontrollér model, farve, størrelse, syninger og synlige skader. Bed om nærbilleder eller målinger, hvis noget er uklart. QC-billeder kan vise synlige forhold, men dokumenterer ikke i sig selv ægthed eller holdbarhed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er fragt og afgifter med i vareprisen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Det kan du ikke gå ud fra. Undersøg varepris, lokal levering, international fragt, betalingsgebyrer og eventuel moms eller told særskilt. Den endelige pris afhænger af varen, leveringen og de gældende vilkår."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan alle produktlinks bruges hos Sugargoo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Det kan ikke garanteres. Kontrollér hos tjenesten, om det konkrete produktlink, mærke og leveringsland understøttes, inden du indbetaler penge eller bestiller."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er siden officielt tilknyttet Sugargoo eller de viste mærker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. Dette er en uafhængig informationsside. Mærkenavne og inspirationsbilleder indebærer hverken et samarbejde, en godkendelse eller dokumentation for en bestemt vares ægthed."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/kynks/">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://www.hipobuyfind.com" aria-label="Besøg HipobuyFind">FUND<span> / </span>FORM</a>
+    <span class="edition">Dansk købsguide · sko &amp; garderobe</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="category-section" aria-labelledby="categories-heading">
+    <h2 class="eyebrow" id="categories-heading">Start med en kategori</h2>
+    <nav class="categories" aria-label="Produktkategorier hos HipobuyFind">
+      <a href="https://hipobuyfind.com/category-911-Shoes.html">Sko</a>
+      <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hættetrøjer / strik</a>
+      <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts</a>
+      <a href="https://hipobuyfind.com/category-914-Jackets.html">Jakker</a>
+      <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Bukser / shorts</a>
+      <a href="https://hipobuyfind.com/category-916-Headwear.html">Hovedbeklædning</a>
+      <a href="https://hipobuyfind.com/category-917-Sets.html">Sæt</a>
+      <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Undertøj / underbukser</a>
+      <a href="https://hipobuyfind.com/category-919-Jersey.html">Sportstrøjer</a>
+      <a href="https://hipobuyfind.com/category-920-Accessories.html">Tilbehør</a>
+    </nav>
+  </section>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <p class="eyebrow">Færre gæt. Bedre overblik.</p>
+      <h1 id="hero-title">Sugargoo spreadsheet med blik for detaljen.</h1>
+      <p class="lead">Et godt fund begynder med inspiration og bliver til et bedre valg, når du undersøger pasform, materialer og samlede udgifter. Brug guiden til at gøre din købsliste mere konkret.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Udforsk HipobuyFind <span aria-hidden="true">↗</span></a>
+    </div>
+    <figure>
+      <span class="stamp">FORM / FARVE / PASFORM</span>
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=75" width="960" height="960" alt="Rød Nike-sneaker med hvidt mærke på en rød baggrund" loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>Visuel inspiration. Billedet er ikke dokumentation for en vare i det eksterne katalog.</figcaption>
+    </figure>
+  </section>
+
+  <section class="answer" aria-labelledby="answer-heading">
+    <h2 id="answer-heading">Hvad er en Sugargoo spreadsheet?</h2>
+    <p>Det er en organiseret samling produktlinks, der bruges som udgangspunkt for at finde og sammenligne varer. En liste erstatter ikke sælgerens oplysninger, en størrelsestabel eller din egen kontrol før køb.</p>
+  </section>
+
+  <section class="section" aria-labelledby="topics-heading">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Fire nyttige indgange</p>
+        <h2 id="topics-heading">Find noget, der passer til dit behov.</h2>
+      </div>
+      <p>Brug kategorierne som sortering. Gå derefter fra det brede udvalg til de detaljer, der faktisk afgør dit valg.</p>
+    </div>
+
+    <div class="topic-grid">
+      <article class="topic">
+        <span class="num">01 / PRODUKTFUND</span>
+        <h3>Sugargoo-produktfund</h3>
+        <p>Lav en kort liste over relevante produktlinks til sko og tøj. Sammenlign samme model og farve, så billeder af forskellige varianter ikke bliver blandet sammen.</p>
+      </article>
+      <article class="topic">
+        <span class="num">02 / STØRRELSER</span>
+        <h3>Størrelsesguide til sneakers</h3>
+        <p>En størrelsestabel til sneakers er mest nyttig sammen med din fodlængde. Kontrollér også skobredde og pasform, især hvis du skifter model.</p>
+      </article>
+      <article class="topic">
+        <span class="num">03 / BILLEDKONTROL</span>
+        <h3>Guide til QC-billeder</h3>
+        <p>QC betyder kvalitetskontrol. Brug nærbilleder af syninger og billeder af størrelsesmærket til at finde synlige afvigelser før en eventuel forsendelse.</p>
+      </article>
+      <article class="topic">
+        <span class="num">04 / BUDGET</span>
+        <h3>Fragt og samlet pris</h3>
+        <p>Planlæg dit budget til køb fra udlandet med plads til levering og gebyrer. En varepris uden fragt fortæller kun en del af historien.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section editorial" aria-labelledby="articles-heading">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&amp;fit=crop&amp;w=720&amp;q=75" width="720" height="900" alt="Et par brune Nike-sneakers med mørke detaljer set ovenfra" loading="lazy" decoding="async">
+      <figcaption>Sneakerinspiration: se på proportioner og detaljer, og kontrollér den konkrete model separat.</figcaption>
+    </figure>
+
+    <div>
+      <p class="eyebrow">Tema / køb med omtanke</p>
+      <h2 id="articles-heading">Fra produktlink til et velovervejet køb</h2>
+
+      <div class="article-stack">
+        <article>
+          <span class="tag">Kort guide 01 · sko</span>
+          <h3>Pasform før størrelsesnummer</h3>
+          <p>Ved valg af skostørrelse online er et kendt EU-nummer kun et udgangspunkt. Mål begge fødder, brug den længste som reference, og sammenlign med sælgerens vejledning til den konkrete model.</p>
+          <p>En indvendig måling af sko kan afklare tvivl, men læs hvordan målet er taget. Kontrollér også størrelsesmærket på skoene og muligheden for returnering ved forkert størrelse. Ved Nike-sneakers bør du sammenligne samme model frem for at overføre pasformen fra et andet par.</p>
+        </article>
+
+        <article>
+          <span class="tag">Kort guide 02 · tøj</span>
+          <h3>Brug dit eget tøj som målestok</h3>
+          <p>Find en hættetrøje, du allerede kan lide. Mål den fladt, og brug brystmål på hættetrøjer, skulderbredde og ærmelængde som sammenligningsgrundlag. Kontrollér, om sælgerens tal er flade mål eller omkreds.</p>
+          <p>Ved valg af oversized T-shirt er både længde og bredde relevante. Se efter oplysninger om bomuld og materialeblanding, og undersøg en jakkes mål og lag-på-lag-pasform med det tøj, du vil bære under den. Et matchende sæt kan kræve forskellige størrelser til overdel og underdel.</p>
+        </article>
+
+        <article>
+          <span class="tag">Kort guide 03 · tilbehør</span>
+          <h3>Små ting kræver også præcise mål</h3>
+          <p>Ved valg af kasketstørrelse hjælper en måling af hovedomkreds mere end et billede. For smykker er oplysninger om materiale og hudkontakt relevante; ved tasker bør du sammenligne remmens længde, lukning og indvendig plads.</p>
+          <p>Hvis du søger efter Louis Vuitton, Gucci, Hermès eller Dior, skal du kontrollere den konkrete vares oprindelse og dokumentation. Sammenligning af produktbilleder eller et logo alene kan ikke fastslå ægthed. Bed om tydelige oplysninger frem for at drage konklusioner ud fra mærkenavnet.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="check-heading">
+    <div class="checks">
+      <p class="eyebrow">Din kontrol før betaling</p>
+      <h2 id="check-heading">Gør din købsliste brugbar.</h2>
+      <ul>
+        <li>Gem produktnavn, farve og valgt størrelse sammen med linket.</li>
+        <li>Kontrollér sælgerens størrelsestabel for hver enkelt model.</li>
+        <li>Se efter forskelle mellem produktfoto og QC-billeder.</li>
+        <li>Undersøg vilkår for returnering og eventuelle tidsfrister.</li>
+        <li>Afklar estimeret pakkevægt og betydningen af pakkens mål.</li>
+        <li>Kontrollér betalingsgebyrer og valutakurs før godkendelse.</li>
+        <li>Undersøg levering til Danmark og eventuel moms eller told.</li>
+        <li>Bekræft, at tjenesten understøtter dit produkt og leveringsland.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="budget-heading">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Tema / økonomisk overblik</p>
+        <h2 id="budget-heading">Sammenlign hele købet.</h2>
+      </div>
+      <p>Ved brug af en Sugargoo spreadsheet bør du holde produktvalg og leveringsbudget adskilt, indtil alle relevante beløb er kendt.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption style="text-align:left;padding:16px 19px;font-weight:750">Udgifter, der skal afklares før et køb</caption>
+        <thead>
+          <tr>
+            <th scope="col">Post</th>
+            <th scope="col">Hvad skal du undersøge?</th>
+            <th scope="col">Hvorfor?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vare og variant</td>
+            <td>Pris for præcis farve, størrelse og antal.</td>
+            <td>Varianter kan have forskellige priser.</td>
+          </tr>
+          <tr>
+            <td>Lokal levering</td>
+            <td>Eventuel transport fra sælger til et lager.</td>
+            <td>Den kan være opkrævet særskilt.</td>
+          </tr>
+          <tr>
+            <td>International fragt</td>
+            <td>Vægt, pakkemål, destination og leveringsvilkår.</td>
+            <td>Volumenvægt kan påvirke fragtberegningen.</td>
+          </tr>
+          <tr>
+            <td>Betaling</td>
+            <td>Valutaomregning og eventuelle betalingsgebyrer.</td>
+            <td>Det hævede beløb kan afvige fra vareprisen.</td>
+          </tr>
+          <tr>
+            <td>Moms og told</td>
+            <td>Gældende regler for destinationen og forsendelsen.</td>
+            <td>Importudgifter kan ændre det samlede budget.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section faq" aria-labelledby="faq-heading">
+    <div class="faq-intro">
+      <p class="eyebrow">Spørgsmål / direkte svar</p>
+      <h2 id="faq-heading">Før du går videre</h2>
+      <p>En kort afklaring af links, billeder og køb. Kontrollér altid de aktuelle oplysninger hos den tjeneste og sælger, du vælger.</p>
+    </div>
+
+    <div>
+      <details>
+        <summary>Hvad er en Sugargoo spreadsheet?</summary>
+        <p>Det er en organiseret samling produktlinks, der bruges som udgangspunkt for at finde og sammenligne varer. En liste erstatter ikke sælgerens oplysninger, en størrelsestabel eller din egen kontrol før køb.</p>
+      </details>
+      <details>
+        <summary>Hvor fører sidens links hen?</summary>
+        <p>Kategoriknapperne åbner de angivne kategorier på hipobuyfind.com. Alle øvrige klikbare links åbner https://www.hipobuyfind.com. De fører ikke direkte til Sugargoo.</p>
+      </details>
+      <details>
+        <summary>Hvordan vælger jeg den rigtige skostørrelse?</summary>
+        <p>Mål begge fødder, og sammenlign målene med størrelsestabellen for den konkrete model. Bed om en indvendig måling, hvis tabellen er uklar. Et EU-nummer alene er ikke nok til at sikre pasformen.</p>
+      </details>
+      <details>
+        <summary>Hvad skal jeg se efter på QC-billeder?</summary>
+        <p>Kontrollér model, farve, størrelse, syninger og synlige skader. Bed om nærbilleder eller målinger, hvis noget er uklart. QC-billeder kan vise synlige forhold, men dokumenterer ikke i sig selv ægthed eller holdbarhed.</p>
+      </details>
+      <details>
+        <summary>Er fragt og afgifter med i vareprisen?</summary>
+        <p>Det kan du ikke gå ud fra. Undersøg varepris, lokal levering, international fragt, betalingsgebyrer og eventuel moms eller told særskilt. Den endelige pris afhænger af varen, leveringen og de gældende vilkår.</p>
+      </details>
+      <details>
+        <summary>Kan alle produktlinks bruges hos Sugargoo?</summary>
+        <p>Det kan ikke garanteres. Kontrollér hos tjenesten, om det konkrete produktlink, mærke og leveringsland understøttes, inden du indbetaler penge eller bestiller.</p>
+      </details>
+      <details>
+        <summary>Er siden officielt tilknyttet Sugargoo eller de viste mærker?</summary>
+        <p>Nej. Dette er en uafhængig informationsside. Mærkenavne og inspirationsbilleder indebærer hverken et samarbejde, en godkendelse eller dokumentation for en bestemt vares ægthed.</p>
+      </details>
+    </div>
+  </section>
+
+  <aside class="end" aria-label="Udforsk flere produktfund">
+    <div>
+      <h2>Start med én kategori.</h2>
+      <p>Find en relevant model hos HipobuyFind, og brug målene og kontrollisten til at vurdere næste skridt.</p>
+    </div>
+    <a class="button" href="https://www.hipobuyfind.com">Se produktfund <span aria-hidden="true">↗</span></a>
+  </aside>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>FUND / FORM</strong> · Uafhængig dansk guide til produktfund og købsforberedelse.</p>
+    <p>Sugargoo og de nævnte mærker tilhører deres respektive ejere. Inspirationsbilleder er ikke tilbud eller en garanti for tilgængelighed, kvalitet eller ægthed. Bestilling og kundeservice håndteres på den valgte eksterne tjeneste.</p>
+    <a href="https://www.hipobuyfind.com">Besøg HipobuyFind ↗</a>
+  </div>
+</footer>
+</body>
+</html>
